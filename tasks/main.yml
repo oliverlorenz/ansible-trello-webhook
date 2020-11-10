@@ -1,0 +1,14 @@
+---
+- name: create webhook
+  uri:
+    url: https://api.trello.com/1/webhooks/?key={{ key }}&token={{ token }}&callbackURL={{ callbackURL }}&idModel={{ idModel }}
+    method: POST
+    status_code:
+      - 200
+      - 400
+    return_content: yes
+  register: webhook
+
+- fail:
+    msg: "{{ webhook.content }}"
+  when: webhook.status == 400 and webhook.content != "A webhook with that callback, model, and token already exists"

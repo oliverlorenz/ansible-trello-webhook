@@ -1,0 +1,30 @@
+{
+  "name": "@oliverlorenz/ansible-trello-webhook",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,css,md}\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "11.0.0",
+    "@commitlint/config-conventional": "11.0.0",
+    "@semantic-release/github": "7.1.1",
+    "husky": "4.3.0",
+    "lint-staged": "10.4.2",
+    "prettier": "2.1.2",
+    "semantic-release": "17.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "prettier --write"
+    ]
+  }
+}
