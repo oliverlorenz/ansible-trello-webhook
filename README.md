@@ -4,8 +4,8 @@ Creates a webhook for trello
 
 ## Role Variables
 
-| name  | description               |
-+-------+---------------------------+
+| name        | description         |
+|-------------|---------------------|
 | key         | Trello Api Key      |
 | token       | Trello Token        |
 | callbackURL | Callback url to set |
